@@ -43,10 +43,8 @@ public:
 
     // Присваивание временного объекта
     ArrayPtr& operator=(ArrayPtr&& other) noexcept {
-        if (this != other) {
-            delete[] raw_ptr_;
-            raw_ptr_ = other.Release();
-        }
+        delete[] raw_ptr_;
+        raw_ptr_ = other.Release(); 
         return *this;
     }
 
